@@ -1,0 +1,6 @@
+# Robots.txt for Souvenir Merchandise
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://souvenirmerchandise.com/sitemap.xml

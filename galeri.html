@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Foto & Dokumentasi - Vendor Custom Souvenir dan Merchandise #1 Indonesia</title>
+  <meta name="description" content="Dokumentasi visual paket seminar kit, suvenir korporat, tumbler stainless grafir laser, tas kanvas ramah lingkungan, dan exclusive corporate gift.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Gallery Hover & Zoom Overlay */
+    .gallery-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 15, 25, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .group-hover-zoom:hover .gallery-overlay,
+    .active-overlay {
+      opacity: 1 !important;
+    }
+    .group-hover-zoom:hover img {
+      transform: scale(1.05);
+    }
+    .zoom-icon-box {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--color-gold);
+      padding: 0.75rem;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Auto Slider Marquee CSS */
+    .auto-slider-wrap {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .auto-slider-track {
+      display: flex;
+      gap: 1.25rem;
+      width: max-content;
+      animation: scrollMarquee 28s linear infinite;
+    }
+    .auto-slider-track:hover {
+      animation-play-state: paused;
+    }
+    .auto-slider-item {
+      width: 280px;
+      height: 190px;
+      flex-shrink: 0;
+      cursor: pointer;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+    }
+    .auto-slider-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .auto-slider-item:hover img {
+      transform: scale(1.08);
+    }
+
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container-fluid px-3 px-lg-4 px-xl-5">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div class="logo-placeholder-box" title="Logo Souvenir Merchandise">
+          <img src="assets/logo/logo.png" alt="Souvenir Merchandise" class="site-logo-img">
+        </div>
+        <div>
+          <h1 class="h5 mb-0 font-serif text-white fw-bold text-capitalize">Souvenir Merchandise</h1>
+          <small class="text-gold text-uppercase tracking-wider" style="font-size: 0.65rem; letter-spacing: 1.5px;">Custom B2B & Corporate Gift</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-menu navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="portofolio.html">Portofolio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="produk.html" id="navbarDropdownProduk" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produk</a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom" aria-labelledby="navbarDropdownProduk">
+              <li><a class="dropdown-item" href="produk.html?category=custom-souvenir">Custom Souvenir</a></li>
+              <li><a class="dropdown-item" href="produk.html?category=merchandise-custom">Merchandise Custom</a></li>
+              <li><a class="dropdown-item" href="produk.html?category=souvenir-kantor">Souvenir Kantor</a></li>
+              <li><a class="dropdown-item" href="produk.html?category=hampers-korporat">Hampers Korporat</a></li>
+              <li><a class="dropdown-item" href="produk.html?category=tech-gadget">Tech Gadget</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-gold fw-semibold" href="produk.html">Semua Produk →</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="galeri.html">Galeri</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <a href="https://wa.me/6288989643555?text=Halo%20Souvenir%20Merchandise,%20saya%20ingin%20konsultasi%20pemesanan%20souvenir%20merchandise%20perusahaan" target="_blank" rel="noopener noreferrer" class="btn btn-wa d-inline-flex align-items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO BANNER ================= -->
+  <section class="hero-banner text-center py-5" style="background: linear-gradient(180deg, var(--color-black-card) 0%, var(--color-black-bg) 100%);">
+    <div class="container py-4">
+      <h1 class="display-4 font-serif text-white fw-bold mb-3">Galeri Produk & Dokumentasi</h1>
+      <p class="text-muted max-w-800 mx-auto fs-6 mb-4">
+        Dokumentasi visual paket seminar kit, suvenir korporat, tumbler stainless grafir laser, tas kanvas ramah lingkungan, dan exclusive corporate gift produksi Seminarkits.id.
+      </p>
+      
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-gold text-decoration-none">Beranda</a></li>
+          <li class="breadcrumb-item active text-muted" aria-current="page">Galeri</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTENT GALLERY ================= -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bg-black-card rounded-4 overflow-hidden h-100 border-gold-subtle shadow-lg d-flex flex-column gallery-card">
+            <div class="ratio ratio-16x9 overflow-hidden position-relative group-hover-zoom gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Office_souvenirs_collection_on_desk_20260910174619_11zon.webp" data-title="Paket Seminar Kit Lengkap" style="cursor: pointer;">
+              <img src="assets/Office_souvenirs_collection_on_desk_20260910174619_11zon.webp" alt="Paket Seminar Kit Lengkap" class="img-fluid object-fit-cover w-100 h-100 transition-all">
+              <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                <div class="zoom-icon-box text-gold">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v4.5a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 0-1H2.707l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v4.5a.5.5 0 0 1-.5.5h-4.5a.5.5 0 0 1 0-1h2.793l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.5a.5.5 0 0 0-.5-.5h-4.5a.5.5 0 0 0 0 1h2.793L10.879 5.121a.5.5 0 0 0 0 .707zM5.828 5.828a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 0 1H2.232l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="text-gold extra-small font-bold text-uppercase tracking-wider mb-2 d-block">Seminar Kit</span>
+              <h2 class="h5 font-serif text-white fw-bold mb-2">Paket Seminar Kit Lengkap</h2>
+              <p class="text-muted small mb-0">Kombinasi tas spunbond, binder notebook custom, pulpen stylus, dan lanyard ID card.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bg-black-card rounded-4 overflow-hidden h-100 border-gold-subtle shadow-lg d-flex flex-column gallery-card">
+            <div class="ratio ratio-16x9 overflow-hidden position-relative group-hover-zoom gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Corporate_gift_set_with_pen_20260910173023_11zon.webp" data-title="Executive Gift Set Box" style="cursor: pointer;">
+              <img src="assets/Corporate_gift_set_with_pen_20260910173023_11zon.webp" alt="Executive Gift Set Box" class="img-fluid object-fit-cover w-100 h-100 transition-all">
+              <div class="gallery-overlay d-flex align-items-center justify-content-center active-overlay">
+                <div class="zoom-icon-box text-gold">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v4.5a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 0-1H2.707l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v4.5a.5.5 0 0 1-.5.5h-4.5a.5.5 0 0 1 0-1h2.793l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.5a.5.5 0 0 0-.5-.5h-4.5a.5.5 0 0 0 0 1h2.793L10.879 5.121a.5.5 0 0 0 0 .707zM5.828 5.828a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 0 1H2.232l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="text-gold extra-small font-bold text-uppercase tracking-wider mb-2 d-block">Corporate Gift</span>
+              <h2 class="h5 font-serif text-white fw-bold mb-2">Executive Gift Set Box</h2>
+              <p class="text-muted small mb-0">Exclusive hardbox magnetik dengan kombinasi powerbank, pen metal, dan flashdisk kartu.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bg-black-card rounded-4 overflow-hidden h-100 border-gold-subtle shadow-lg d-flex flex-column gallery-card">
+            <div class="ratio ratio-16x9 overflow-hidden position-relative group-hover-zoom gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Ceramic_coasters_and_bottle_opener_20260910174744_11zon.webp" data-title="Tumbler Stainless SUS304 Grafir" style="cursor: pointer;">
+              <img src="assets/Ceramic_coasters_and_bottle_opener_20260910174744_11zon.webp" alt="Tumbler Stainless SUS304 Grafir" class="img-fluid object-fit-cover w-100 h-100 transition-all">
+              <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                <div class="zoom-icon-box text-gold">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v4.5a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 0-1H2.707l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v4.5a.5.5 0 0 1-.5.5h-4.5a.5.5 0 0 1 0-1h2.793l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.5a.5.5 0 0 0-.5-.5h-4.5a.5.5 0 0 0 0 1h2.793L10.879 5.121a.5.5 0 0 0 0 .707zM5.828 5.828a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 0 1H2.232l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <span class="text-gold extra-small font-bold text-uppercase tracking-wider mb-2 d-block">Drinkware</span>
+              <h2 class="h5 font-serif text-white fw-bold mb-2">Tumbler Stainless SUS304 Grafir</h2>
+              <p class="text-muted small mb-0">Vacuum flask tahan panas dingin 12 jam dengan personalisasi logo laser fiber permanen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= AUTO SLIDING PHOTO GALLERY SHOWCASE ================= -->
+  <section class="py-5 overflow-hidden border-top border-bottom border-secondary" style="background-color: var(--color-black-card);">
+    <div class="container mb-4 text-center">
+      <span class="text-gold text-uppercase tracking-wider small fw-bold d-block mb-1">Dokumentasi Workshop & Portfolio Showcase</span>
+      <h2 class="h3 font-serif text-white fw-bold mb-2">Proses Pengerjaan & Koleksi Foto Bergeser Otomatis</h2>
+      <p class="text-muted small max-w-700 mx-auto">Foto-foto hasil produksi di bawah ini bergeser secara otomatis dan dapat diklik untuk memperbesar tampilan.</p>
+    </div>
+
+    <!-- Marquee Slider Wrap -->
+    <div class="auto-slider-wrap">
+      <div class="auto-slider-track">
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Luxury_corporate_gift_set_arranged_20260910174124_11zon.webp" data-title="Luxury Gift Set Collection">
+          <img src="assets/Luxury_corporate_gift_set_arranged_20260910174124_11zon.webp" alt="Documentation 1" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Laptop,_headphones,_and_glasses_…_20260910173010.webp" data-title="Tech Accessories Kit">
+          <img src="assets/Laptop,_headphones,_and_glasses_…_20260910173010.webp" alt="Documentation 2" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Mechanical_pencil_on_blueprint_p…_20260910173030.webp" data-title="Mechanical Pencil Blueprint Detail">
+          <img src="assets/Mechanical_pencil_on_blueprint_p…_20260910173030.webp" alt="Documentation 3" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Metal_power_bank_on_surface_20260910173000_11zon.webp" data-title="Metal Powerbank Custom Logo">
+          <img src="assets/Metal_power_bank_on_surface_20260910173000_11zon.webp" alt="Documentation 4" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Crystal_award_with_laser_engraving_20260910174627_11zon.webp" data-title="Crystal Trophy Award Engraving">
+          <img src="assets/Crystal_award_with_laser_engraving_20260910174627_11zon.webp" alt="Documentation 5" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Corporate_hamper_box_with_gourme…_20260910174616.webp" data-title="Corporate Gourmet Hamper Box">
+          <img src="assets/Corporate_hamper_box_with_gourme…_20260910174616.webp" alt="Documentation 6" class="img-fluid rounded-3">
+        </div>
+        <!-- Duplicated items for seamless infinite scroll loop -->
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Luxury_corporate_gift_set_arranged_20260910174124_11zon.webp" data-title="Luxury Gift Set Collection">
+          <img src="assets/Luxury_corporate_gift_set_arranged_20260910174124_11zon.webp" alt="Documentation 1" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Laptop,_headphones,_and_glasses_…_20260910173010.webp" data-title="Tech Accessories Kit">
+          <img src="assets/Laptop,_headphones,_and_glasses_…_20260910173010.webp" alt="Documentation 2" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Mechanical_pencil_on_blueprint_p…_20260910173030.webp" data-title="Mechanical Pencil Blueprint Detail">
+          <img src="assets/Mechanical_pencil_on_blueprint_p…_20260910173030.webp" alt="Documentation 3" class="img-fluid rounded-3">
+        </div>
+        <div class="auto-slider-item gallery-zoom-trigger" data-bs-toggle="modal" data-bs-target="#galleryZoomModal" data-img="assets/Metal_power_bank_on_surface_20260910173000_11zon.webp" data-title="Metal Powerbank Custom Logo">
+          <img src="assets/Metal_power_bank_on_surface_20260910173000_11zon.webp" alt="Documentation 4" class="img-fluid rounded-3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BOTTOM CTA ================= -->
+  <section class="py-5">
+    <div class="container">
+      <div class="p-4 p-md-5 rounded-4 position-relative overflow-hidden shadow-lg border border-warning" style="background: linear-gradient(135deg, var(--color-black-card) 0%, #0d121c 100%);">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7 text-center text-lg-start">
+            <span class="badge bg-gold text-dark text-uppercase tracking-wider small fw-bold mb-3 px-3 py-2 rounded-pill">
+              Konsultasi Gratis & Penawaran Kilat
+            </span>
+            <h2 class="display-6 font-serif text-white fw-bold mb-3">Siap Mewujudkan Merchandise Impian Perusahaan Anda?</h2>
+            <p class="text-muted fs-6 mb-4">
+              Tim konsultan branding Souvenir Merchandise siap membantu perencanaan anggaran, pemilihan produk, pembuatan sampel mockup gratis, hingga pengiriman tepat waktu dengan garansi 100%.
+            </p>
+            
+            <!-- Quick Feature Bullets -->
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 small text-gold">
+              <span class="d-flex align-items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                Garansi Mutu 100%
+              </span>
+              <span class="d-flex align-items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                Sampel Mockup Gratis
+              </span>
+              <span class="d-flex align-items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                Layanan Express 24 Jam
+              </span>
+            </div>
+          </div>
+
+          <div class="col-lg-5 text-center">
+            <div class="p-4 rounded-4 bg-dark border border-secondary shadow-sm">
+              <h3 class="h5 font-serif text-white mb-3">Hubungi Konsultan Kami</h3>
+              <p class="text-muted small mb-4">Dapatkan penawaran harga grosir terbaik dalam kurun waktu kurang dari 15 menit.</p>
+              
+              <div class="d-flex flex-column gap-3">
+                <a href="https://wa.me/6288989643555?text=Halo%20Souvenir%20Merchandise,%20saya%20tertarik%20konsultasi%20pemesanan%20souvenir" target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-lg w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                  <span>Chat Via WhatsApp</span>
+                </a>
+                <a href="minta-penawaran.html" class="btn btn-outline-gold btn-lg w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path d="M4 4.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                  <span>Form Penawaran Resmi</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIGHTBOX ZOOM IN & ZOOM OUT MODAL ================= -->
+  <div class="modal fade" id="galleryZoomModal" tabindex="-1" aria-labelledby="galleryZoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-dark text-white border-gold-subtle shadow-lg">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title font-serif text-gold" id="lightboxTitle">Preview Foto Galeri</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0 position-relative text-center overflow-hidden bg-black min-h-300 d-flex align-items-center justify-content-center">
+          <div class="p-3 w-100 h-100 overflow-auto" style="max-height: 75vh;">
+            <img id="lightboxImg" src="" alt="Full Preview" class="img-fluid rounded transition-transform" style="transition: transform 0.25s ease; max-height: 70vh; object-fit: contain;">
+          </div>
+        </div>
+        <div class="modal-footer border-secondary d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <span class="text-muted small me-2">Kontrol Zoom Foto:</span>
+            <button id="btnZoomIn" class="btn btn-gold btn-sm d-flex align-items-center gap-1" title="Zoom In">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h2.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v2.5a2 2 0 0 1-2 2h-2.5a.5.5 0 0 1 0-1H14a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 .5-.5zM.5 6a.5.5 0 0 1-.5-.5V3a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2a1 1 0 0 0-1 1v2.5a.5.5 0 0 1-.5.5zm15 0a.5.5 0 0 1-.5-.5V3a1 1 0 0 0-1-1h-2.5a.5.5 0 0 1 0-1H14a2 2 0 0 1 2 2v2.5a.5.5 0 0 1-.5.5z"/><path d="M6.5 8a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3z"/><path d="M8 6.5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3z"/></svg>
+              Zoom In (+)
+            </button>
+            <button id="btnZoomOut" class="btn btn-outline-gold btn-sm d-flex align-items-center gap-1" title="Zoom Out">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h2.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v2.5a2 2 0 0 1-2 2h-2.5a.5.5 0 0 1 0-1H14a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 .5-.5zM.5 6a.5.5 0 0 1-.5-.5V3a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2a1 1 0 0 0-1 1v2.5a.5.5 0 0 1-.5.5zm15 0a.5.5 0 0 1-.5-.5V3a1 1 0 0 0-1-1h-2.5a.5.5 0 0 1 0-1H14a2 2 0 0 1 2 2v2.5a.5.5 0 0 1-.5.5z"/><path d="M6.5 8a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3z"/></svg>
+              Zoom Out (-)
+            </button>
+            <button id="btnZoomReset" class="btn btn-outline-secondary btn-sm text-white" title="Reset Scale">
+              Reset
+            </button>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="logo-placeholder-box" title="Logo Souvenir Merchandise">
+              <img src="assets/logo/logo.png" alt="Souvenir Merchandise" class="site-logo-img">
+            </div>
+            <div>
+              <h2 class="h5 mb-0 font-serif text-white fw-bold text-capitalize">Souvenir Merchandise</h2>
+              <small class="text-gold text-uppercase tracking-wider" style="font-size: 0.65rem;">Vendor & Supplier Resmi</small>
+            </div>
+          </div>
+          <p class="text-muted small">Produsen spesialis souvenir dan merchandise korporat premium dengan paduan warna eksklusif, teknologi laser presisi, dan jaminan garansi 100%.</p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h3 class="footer-heading">Navigasi Halaman</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="layanan.html">Layanan Kami</a></li>
+            <li><a href="katalog.html">Katalog PDF</a></li>
+            <li><a href="portofolio.html">Portofolio</a></li>
+            <li><a href="produk.html">Katalog Produk</a></li>
+            <li><a href="blog.html">Blog & Artikel</a></li>
+            <li><a href="galeri.html">Galeri Foto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h3 class="footer-heading">Kategori Produk</h3>
+          <ul class="footer-links">
+            <li><a href="produk.html">Custom Souvenir</a></li>
+            <li><a href="produk.html">Merchandise Custom</a></li>
+            <li><a href="produk.html">Souvenir Kantor</a></li>
+            <li><a href="produk.html">Hampers Korporat</a></li>
+            <li><a href="produk.html">Executive Tech</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h3 class="footer-heading">Hubungi Workshop</h3>
+          <p class="small text-muted mb-2 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-gold me-2 flex-shrink-0" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>District 8 Tower Treasury, SCBD, Jakarta Selatan 12190</p>
+          <p class="small text-muted mb-2 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-gold me-2 flex-shrink-0" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>WhatsApp: +62 889-8964-3555</p>
+          <p class="small text-muted mb-2 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-gold me-2 flex-shrink-0" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>Email: souvenirmerchandise@gmail.com</p>
+          <p class="small text-muted mb-0 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-gold me-2 flex-shrink-0" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>Jam Kerja: Senin - Sabtu (08:30 - 18:00 WIB)</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center pt-4 border-top border-dark small text-muted">
+        <div>© 2026 Souvenir Merchandise. All Rights Reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted text-decoration-none">Kebijakan Privasi</a>
+          <a href="#" class="text-muted text-decoration-none">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" id="backToTop" class="floating-top-btn" aria-label="Kembali ke Atas">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <!-- Floating WA Button -->
+  <a href="https://wa.me/6288989643555?text=Halo%20Souvenir%20Merchandise,%20saya%20ingin%20konsultasi%20pemesanan%20souvenir%20merchandise%20perusahaan" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Chat via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Interactive Lightbox & Zoom Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentZoom = 1;
+      const modalImg = document.getElementById('lightboxImg');
+      
+      document.querySelectorAll('.gallery-zoom-trigger').forEach(item => {
+        item.addEventListener('click', function() {
+          const src = this.getAttribute('data-img');
+          const title = this.getAttribute('data-title');
+          document.getElementById('lightboxTitle').textContent = title || 'Preview Foto Galeri';
+          modalImg.src = src;
+          currentZoom = 1;
+          modalImg.style.transform = `scale(${currentZoom})`;
+        });
+      });
+
+      document.getElementById('btnZoomIn')?.addEventListener('click', function() {
+        currentZoom = Math.min(currentZoom + 0.3, 3.0);
+        modalImg.style.transform = `scale(${currentZoom})`;
+      });
+
+      document.getElementById('btnZoomOut')?.addEventListener('click', function() {
+        currentZoom = Math.max(currentZoom - 0.3, 0.5);
+        modalImg.style.transform = `scale(${currentZoom})`;
+      });
+
+      document.getElementById('btnZoomReset')?.addEventListener('click', function() {
+        currentZoom = 1;
+        modalImg.style.transform = `scale(1)`;
+      });
+    });
+  </script>
+</body>
+</html>
