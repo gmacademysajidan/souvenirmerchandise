@@ -392,6 +392,64 @@ p {
     z-index: 1040 !important;
   }
 
+  /* Prevent header container from wrapping brand and toggler onto separate lines */
+  .navbar-custom > .container-fluid,
+  .navbar-custom .container-fluid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Responsive Proportional Navbar Brand for Mobile */
+  .navbar-brand {
+    margin-right: 0.5rem !important;
+    max-width: calc(100% - 54px) !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .navbar-brand > div:last-child {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .navbar-brand .site-logo-img {
+    height: 38px !important;
+    max-height: 38px !important;
+    width: auto !important;
+  }
+
+  .navbar-brand h1 {
+    font-size: 0.95rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.1px !important;
+    margin-bottom: 1px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .navbar-brand small,
+  .navbar-brand .text-gold {
+    font-size: 0.53rem !important;
+    letter-spacing: 0.6px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .navbar-toggler {
+    flex-shrink: 0 !important;
+    padding: 0.25rem 0.45rem !important;
+    font-size: 1rem !important;
+    margin-left: auto !important;
+    border-color: var(--color-border-gold) !important;
+  }
+
   /* Mobile Drawer Header - Visible only on Mobile */
   .mobile-drawer-header {
     display: flex !important;
@@ -834,11 +892,11 @@ p {
 
 /* CTA Horizontal Box */
 .cta-horizontal-box {
-  background: radial-gradient(circle at right center, rgba(212, 167, 44, 0.15), transparent 70%), var(--color-black-card);
+  background: linear-gradient(135deg, var(--color-black-card) 0%, var(--color-black) 100%);
   border: 1px solid var(--color-border-gold);
   border-radius: 20px;
   padding: 50px 48px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--color-gold-glow);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* FAQ Accordion Styling */
@@ -962,7 +1020,7 @@ p {
 }
 
 .cta-box {
-  background: linear-gradient(135deg, var(--color-black-card) 0%, #0d121c 100%);
+  background: linear-gradient(135deg, var(--color-black-card) 0%, var(--color-black) 100%);
   border: 1px solid var(--color-border-gold);
   border-radius: 1.25rem;
   padding: 3rem 2rem;
@@ -1887,8 +1945,24 @@ p {
     padding-right: 14px !important;
   }
 
-  h1, .h1, .hero-title, .hero-main-title {
+  h1:not(.navbar-brand h1), .h1, .hero-title, .hero-main-title {
     font-size: 1.65rem !important;
+  }
+
+  /* Refined Navbar Brand for small screens */
+  .navbar-brand .site-logo-img {
+    height: 35px !important;
+    max-height: 35px !important;
+  }
+
+  .navbar-brand h1 {
+    font-size: 0.88rem !important;
+  }
+
+  .navbar-brand small,
+  .navbar-brand .text-gold {
+    font-size: 0.5rem !important;
+    letter-spacing: 0.4px !important;
   }
 
   h2, .h2 {
@@ -1913,6 +1987,23 @@ p {
     bottom: 78px !important;
     width: 44px !important;
     height: 44px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar-brand .site-logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+  }
+
+  .navbar-brand h1 {
+    font-size: 0.82rem !important;
+  }
+
+  .navbar-brand small,
+  .navbar-brand .text-gold {
+    font-size: 0.46rem !important;
+    letter-spacing: 0.2px !important;
   }
 }
 
