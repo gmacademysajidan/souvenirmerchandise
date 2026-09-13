@@ -14,6 +14,56 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Beranda",
+            "item": "https://souvenirmerchandise.com/index.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produk",
+            "item": "https://souvenirmerchandise.com/produk.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Paket Seminar Cordura Kit",
+            "item": "https://souvenirmerchandise.com/paket-seminar-cordura-notebook-kit.html"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Paket Souvenir Seminar Cordura Kit",
+        "image": "https://souvenirmerchandise.com/assets/Office_souvenirs_collection_on_desk_20260910174619_11zon.webp",
+        "description": "Detail spesifikasi Paket Seminar Cordura + Notebook Kit: Pouch laptop waterproof, notebook eco-paper A5, pulpen metal ukir laser, dan lanyard tissue soft.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Souvenir Merchandise"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "IDR",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Souvenir Merchandise"
+          }
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
