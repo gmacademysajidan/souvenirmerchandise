@@ -1897,6 +1897,48 @@ p {
     overflow-x: hidden;
   }
 
+  /* Auto-center & compact hero badge tags on mobile without taking excess space */
+  .hero-badge-tag {
+    display: flex !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px 16px !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Compact image overlay banners on mobile so they don't block image view */
+  .position-relative .position-absolute.bottom-0 {
+    padding: 10px 14px !important;
+  }
+
+  /* Proportional CTA buttons on mobile (WhatsApp, Gold, Outline) */
+  .btn-wa,
+  .btn-gold,
+  .btn-outline-gold {
+    padding: 0.55rem 1.2rem !important;
+    font-size: 0.88rem !important;
+  }
+
+  .btn-wa.btn-lg,
+  .btn-gold.btn-lg,
+  .btn-outline-gold.btn-lg {
+    padding: 0.65rem 1.35rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .btn-wa svg,
+  .btn-gold svg,
+  .btn-outline-gold svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
   /* Center standalone showcase image boxes in columns on mobile */
   .col-lg-6 > .position-relative,
   .col-lg-6 > .rounded-4,
@@ -2033,6 +2075,35 @@ p {
     max-height: 360px !important;
     object-fit: cover !important;
     width: 100% !important;
+  }
+}
+
+/* Table of Contents (TOC) Article Component */
+.toc-card {
+  background: var(--color-black-card);
+  border: 1px solid var(--color-border-gold);
+  border-radius: 16px;
+}
+
+.toc-list li::marker {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.hover-gold:hover {
+  color: var(--color-gold) !important;
+  text-decoration: underline !important;
+}
+
+.extra-small {
+  font-size: 0.72rem;
+}
+
+@media (min-width: 992px) {
+  .sticky-sidebar {
+    position: sticky;
+    top: 90px;
+    z-index: 10;
   }
 }
 

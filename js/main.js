@@ -3,6 +3,42 @@
  * Souvenir Merchandise B2B
  */
 
+// Auto Global High-Res Favicon Injector (Applies to all current & future pages)
+(function initGlobalFavicon() {
+  const faviconUrl = 'assets/logo/logo.png';
+  
+  // Ensure primary high-res icon link exists with multiple crisp sizes
+  let iconLink = document.querySelector("link[rel='icon']");
+  if (!iconLink) {
+    iconLink = document.createElement('link');
+    iconLink.rel = 'icon';
+    document.head.appendChild(iconLink);
+  }
+  iconLink.type = 'image/png';
+  iconLink.sizes = '32x32 48x48 96x96 192x192';
+  iconLink.href = faviconUrl;
+
+  // Shortcut icon fallback
+  let shortcutLink = document.querySelector("link[rel='shortcut icon']");
+  if (!shortcutLink) {
+    shortcutLink = document.createElement('link');
+    shortcutLink.rel = 'shortcut icon';
+    document.head.appendChild(shortcutLink);
+  }
+  shortcutLink.type = 'image/png';
+  shortcutLink.href = faviconUrl;
+
+  // Apple Touch Icon for mobile & enlarged browser shortcuts
+  let appleLink = document.querySelector("link[rel='apple-touch-icon']");
+  if (!appleLink) {
+    appleLink = document.createElement('link');
+    appleLink.rel = 'apple-touch-icon';
+    document.head.appendChild(appleLink);
+  }
+  appleLink.sizes = '180x180';
+  appleLink.href = faviconUrl;
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
   const backToTopBtn = document.getElementById('backToTop');
 

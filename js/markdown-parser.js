@@ -117,5 +117,41 @@ window.MarkdownParser = {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+  },
+
+  // Render Markdown Table of Contents (TOC) into specified target element
+  renderToc(markdownText, targetElement) {
+    const el = typeof targetElement === 'string' ? document.getElementById(targetElement) : targetElement;
+    if (!markdownText || !el) return;
+
+    let html = this.parse(markdownText.trim());
+    
+    // Remove target="_blank" for internal anchor links (#id)
+    html = html.replace(/href="#(.*?)" target="_blank" rel="noopener noreferrer"/g, 'href="#$1"');
+    html = html.replace(/class="md-ol"/g, 'class="toc-list text-light small mb-0 ps-3"');
+    html = html.replace(/class="md-ul"/g, 'class="toc-list text-light small mb-0 ps-3"');
+    html = html.replace(/class="md-link"/g, 'class="text-white text-decoration-none hover-gold"');
+    
+    el.innerHTML = html;
+  },
+
+  // Auto-generate TOC Markdown from H2 & H3 headings in an article container
+  autoGenerateToc(articleSelector, targetElementSelector) {
+    const article = typeof articleSelector === 'string' ? document.querySelector(articleSelector) : articleSelector;
+    const target = typeof targetElementSelector === 'string' ? document.querySelector(targetElementSelector) : targetElementSelector;
+
+    if (!article || !target) return;
+
+    const headings = article.querySelectorAll('h2[id], h3[id]');
+    if (headings.length === 0) return;
+
+    let mdLines = [];
+    headings.forEach((h, index) => {
+      const text = h.textContent.trim();
+      const id = h.id;
+      mdLines.push(`${index + 1}. [${text}](#${id})`);
+    });
+
+    this.renderToc(mdLines.join('\n'), target);
   }
 };
