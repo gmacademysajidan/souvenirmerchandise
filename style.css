@@ -793,6 +793,26 @@ p {
   padding: 32px 20px;
   text-align: center;
   transition: var(--transition-smooth);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .stat-card-box {
+    padding: 20px 10px !important;
+    min-height: 140px;
+  }
+  .stat-card-box .stat-number {
+    font-size: 2.2rem !important;
+    margin-bottom: 6px !important;
+  }
+  .stat-card-box .stat-label {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+  }
 }
 
 .stat-card-box:hover {
@@ -2106,6 +2126,31 @@ p {
     z-index: 10;
   }
 }
+
+/* Product Detail 4-Card Spec Box Mobile & Desktop Equal Height Alignment */
+.row.g-3 > .col-6 > .bg-dark,
+.product-spec-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+@media (max-width: 576px) {
+  .row.g-3 > .col-6 > .bg-dark {
+    padding: 0.75rem !important;
+  }
+  .row.g-3 > .col-6 > .bg-dark span {
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.35rem !important;
+  }
+  .row.g-3 > .col-6 > .bg-dark strong {
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
 
 
 
