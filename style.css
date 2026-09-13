@@ -874,6 +874,10 @@ p {
   border-radius: 16px;
   overflow: hidden;
   transition: var(--transition-smooth);
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
 }
 
 .portfolio-showcase-card:hover {
@@ -886,6 +890,7 @@ p {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
+  width: 100%;
 }
 
 .portfolio-img-box img {
@@ -900,14 +905,19 @@ p {
 }
 
 .portfolio-card-title {
-  padding: 16px;
+  padding: 16px 12px;
   background: #141414;
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--color-white);
   font-weight: 600;
   border-top: 1px solid var(--color-gray-border);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-grow: 1 !important;
+  min-height: 72px;
 }
 
 /* CTA Horizontal Box */
