@@ -7,7 +7,7 @@ window.AppData = {
   companyInfo: {
     name: 'Souvenir Merchandise',
     tagline: 'Solusi Souvenir & Merchandise Korporat Eksklusif Berstandar Internasional',
-    email: 'info@souvenirmerchandise.com',
+    email: 'info@souvenirmerchandise.web.id',
     address: 'Jl. Jend. Sudirman Kav. 52-53, District 8 Tower Treasury, Jakarta Selatan 12190',
     workHours: 'Senin - Sabtu: 08:30 - 18:00 WIB',
     stats: [

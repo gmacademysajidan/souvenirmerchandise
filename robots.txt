@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://souvenirmerchandise.com/sitemap.xml
+Sitemap: https://souvenirmerchandise.web.id/sitemap.xml
